@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<!--
+  ============================================================================
+  WARWICK ALTERNATIVE INVESTMENT SOCIETY  |  index.html
+  ============================================================================
+  This file holds the WORDS and STRUCTURE of your website: headings,
+  paragraphs, links and events. Its partner file, style.css, holds the LOOK:
+  colours, sizes and spacing.
+
+  HOW TO READ THIS FILE
+  * The text you are reading right now is called a "comment". It is a note for
+    humans. The browser ignores comments completely, so you can write notes
+    anywhere without changing how the page looks.
+  * HTML is built from "tags". A tag is a label in angle brackets that tells
+    the browser what a piece of content is. For example, <h1>Hello</h1> means
+    "Hello is the main heading".
+  * Most tags come in pairs: an opening tag <h1> and a closing tag </h1>
+    (the same name with a slash). Everything between the two belongs together.
+  * A "class" (for example class="event") is a name tag we stick on an item so
+    that style.css can find it and give it a look.
+  * An "id" (for example id="about") is a unique name for one section. It lets
+    the menu links jump straight to that section.
+
+  THE PAGE IS SPLIT INTO LABELLED PARTS, IN THIS ORDER:
+    NAV BAR  >  HOME  >  ABOUT  >  EVENTS  >  FOLLOW  >  CONTACT  >  FOOTER
+  Look for the big banner comments to find each part.
+  (The EVENTS part is currently switched off. Find "ON/OFF SWITCH" below.)
+  ============================================================================
+-->
+<html lang="en-GB">
+<!-- lang="en-GB" tells browsers (and screen readers) the page is in British English. -->
+
+<head>
+  <!-- The "head" holds behind-the-scenes information. None of it is shown on the page itself. -->
+
+  <!-- Lets the page show symbols such as £ and arrows correctly. -->
+  <meta charset="UTF-8">
+
+  <!-- IMPORTANT FOR PHONES: tells a phone to fit the page to its screen width
+       instead of shrinking a desktop-sized page. Without this line the site
+       would not be mobile-friendly. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- The name shown on the browser tab and in Google search results. -->
+  <title>Warwick Alternative Investment Society</title>
+
+  <!-- The short summary Google shows under the title in search results. -->
+  <meta name="description" content="Specialist speakers, networking and firm visits that open routes into the lesser-known areas of finance. Warwick Alternative Investment Society.">
+
+  <!-- Colours the top bar of the browser on some phones to match the site. -->
+  <meta name="theme-color" content="#EEF7F0">
+
+  <!-- The tiny picture on the browser tab (we reuse the logo). -->
+  <link rel="icon" href="images/logo.png" type="image/png">
+
+  <!-- FONT: these three lines load the "Manrope" font from Google Fonts (free).
+       If you delete them the site still works; it just uses a plain default font. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Connects this page to style.css, the file that controls the look.
+       Both files must stay in the same folder for this to work. -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="events-hidden">
+  <!-- The "body" is everything that is actually shown on the page. -->
+
+
+  <!-- ======================================================================
+       THE EVENTS ON/OFF SWITCH  (please read)
+       ----------------------------------------------------------------------
+       Look at the opening line just above: <body class="events-hidden">
+       The word events-hidden is a switch.
+
+         WORD PRESENT  =  the Events section and its "Events" menu link are
+                          HIDDEN. This is how the site is set up right now.
+         WORD DELETED  =  the Events section and its menu link are SHOWN.
+                          (Delete the whole class="events-hidden" part so the
+                          line reads simply: <body> )
+
+       Everything that belongs to Events is labelled "events-only" further
+       down, so this one word controls all of it at once.
+
+       HOW TO USE IT
+         * While there are no real events yet: leave the word in place and
+           upload the site as it is.
+         * To PREVIEW the section on your own computer: delete the word, save
+           the file, refresh your browser. Put the word back before uploading.
+         * When real events are ready: delete the word, save, and upload.
+       ====================================================================== -->
+
+
+  <!-- ======================================================================
+       NAV BAR
+       The bar across the top. It stays in view while visitors scroll.
+       ====================================================================== -->
+  <header class="site-header">
+    <nav class="nav" aria-label="Main menu">
+
+      <!-- LOGO + SOCIETY NAME. Clicking it takes visitors back to the top.
+           The logo picture is the file images/logo.png. To change the logo,
+           replace that file with a new picture that has the SAME file name.
+           ("alt" describes the picture for people who can't see it.)
+           <br> simply means "start a new line here". -->
+      <a class="brand" href="#home">
+        <img class="brand-logo" src="images/logo.png" alt="Warwick Alternative Investment Society logo">
+        <span class="brand-name">Warwick Alternative<br>Investment Society</span>
+      </a>
+
+      <!-- MENU LINKS. href="#about" means "jump to the part of this page
+           whose id is about". To rename a link, change the words between
+           the tags (for example, change Contact to Get in touch). -->
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <!-- "events-only" means this link is part of the Events on/off
+             switch: it disappears while the Events section is hidden. -->
+        <li class="events-only"><a href="#events">Events</a></li>
+        <li><a href="#follow">Follow</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+    </nav>
+  </header>
+
+
+  <!-- "main" holds the main content of the page (everything except the nav bar and footer). -->
+  <main>
+
+
+    <!-- ====================================================================
+         HOME
+         The first thing visitors see: a big headline and two buttons.
+         ==================================================================== -->
+    <section id="home" class="hero">
+      <div class="container">
+
+        <!-- The small label above the headline. -->
+        <p class="eyebrow">Warwick Alternative Investment Society</p>
+
+        <!-- The BIG headline (h1 = the most important heading on the page).
+             The word inside the "highlight" tags gets the pale green marker
+             effect underneath it. -->
+        <h1 class="hero-title">Finance, beyond the <span class="highlight">obvious.</span></h1>
+
+        <!-- The short sentence under the headline. -->
+        <p class="hero-text">Specialist speakers, networking and firm visits that open up the corners of finance most students never hear about.</p>
+
+        <!-- The two buttons. The first jumps down to the About section. (Once
+             your Events section is live you could change it to "See upcoming
+             events" and point it at #events.) target="_blank" makes the
+             Instagram link open in a new browser tab so visitors don't lose
+             your site. -->
+        <div class="button-row">
+          <a class="button button-solid" href="#about">What we do</a>
+          <a class="button button-outline" href="https://www.instagram.com/warwickaltinvestment/" target="_blank" rel="noopener">Follow on Instagram</a>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ====================================================================
+         ABOUT
+         Who you are, why you exist, and what you do.
+         ==================================================================== -->
+    <section id="about" class="section">
+      <div class="container">
+
+        <p class="eyebrow">About us</p>
+        <h2 class="section-title">Finance has more doors than you think.</h2>
+
+        <!-- Two paragraphs describing the society. Edit the words freely. -->
+        <div class="about-text">
+          <p class="about-lead">Warwick Alternative Investment Society exists to shine a light on the areas of finance that traditional finance societies don't usually cover.</p>
+          <p>Our aim is simple: raise awareness of the sectors that not everyone knows about, and build real routes into them. We do that through the people we bring in, the connections we help you make, and the firms we take you to see.</p>
+        </div>
+
+        <!-- THREE CARDS describing the types of event the society runs.
+             Each card is one "pillar" block. To add a fourth, copy a whole
+             block (from its opening div to its closing div) and paste it
+             below the last one. It will start a new row. -->
+        <div class="pillars">
+
+          <div class="pillar">
+            <span class="pillar-number">01</span>
+            <h3>Specialist speakers</h3>
+            <p>Hear first-hand from people working in less-travelled corners of finance, and ask the questions you can't Google.</p>
+          </div>
+
+          <div class="pillar">
+            <span class="pillar-number">02</span>
+            <h3>Networking sessions</h3>
+            <p>Meet professionals and fellow members, and start building the contacts that open doors.</p>
+          </div>
+
+          <div class="pillar">
+            <span class="pillar-number">03</span>
+            <h3>Insight trips</h3>
+            <p>Organised visits to banks and firms, and insight programmes that show you what the work is really like.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ====================================================================
+         EVENTS   >>> CURRENTLY HIDDEN <<<  (see the ON/OFF SWITCH at the top
+         of the body, above the nav bar)
+
+         This is where upcoming events will be listed. For now it shows the
+         three TYPES of event the society will run, each with its date still
+         "to be confirmed" (TBC). Because it carries the label "events-only",
+         it vanishes while the switch is on.
+         ==================================================================== -->
+    <section id="events" class="section section-tint events-only">
+      <div class="container">
+
+        <p class="eyebrow">Events</p>
+        <h2 class="section-title">What's coming up.</h2>
+        <p class="section-intro">Three kinds of event. Dates will be announced here and on our Instagram as soon as they're confirmed.</p>
+
+
+        <!-- ================================================================
+             HOW TO ADD, EDIT OR REMOVE AN EVENT
+
+             Every event is ONE block. A block starts at the line that says
+             "START OF ONE EVENT" and ends at the line that says
+             "END OF ONE EVENT".
+
+             TO ADD A NEW EVENT
+               1. Select everything from "START OF ONE EVENT" down to
+                  "END OF ONE EVENT" and copy it.
+               2. Paste it directly above or below another event
+                  (never in the middle of one).
+               3. Change the date, type, title, location and description.
+                  For the date badge, replace TBC with the day number and
+                  add a second line for the month, like this:
+                      <span class="event-day">12</span>
+                      <span class="event-month">Nov</span>
+               4. Save the file, then refresh the page in your browser.
+
+             TO REMOVE AN EVENT: delete its whole block, start to end.
+
+             Events show in the same order as they appear in this file, so put
+             the soonest one first.
+
+             The three blocks below describe the TYPES of event. Once you have
+             real dates, turn them into real events (or delete them and add
+             new blocks).
+             ================================================================ -->
+        <div class="events-list">
+
+
+          <!-- >>>>>>>>>> START OF ONE EVENT (copy from here) >>>>>>>>>> -->
+          <article class="event">
+
+            <!-- The dark date badge. "TBC" means "to be confirmed". -->
+            <div class="event-date">
+              <span class="event-day">TBC</span>
+            </div>
+
+            <!-- The event details. -->
+            <div class="event-info">
+              <!-- Type of event, e.g. Speakers, Networking, Insight Trips (or anything you like). -->
+              <p class="event-tag">Speakers</p>
+              <!-- Event title. -->
+              <h3 class="event-title">Specialist speaker events</h3>
+              <!-- Where it takes place. -->
+              <p class="event-location">Venue to be announced</p>
+              <!-- A short description: one or two sentences. -->
+              <p class="event-description">Practitioners from less-travelled corners of finance talk about their work and the route they took to get there.</p>
+            </div>
+
+          </article>
+          <!-- <<<<<<<<<< END OF ONE EVENT (copy to here) <<<<<<<<<< -->
+
+
+          <!-- >>>>>>>>>> START OF ONE EVENT (copy from here) >>>>>>>>>> -->
+          <article class="event">
+
+            <div class="event-date">
+              <span class="event-day">TBC</span>
+            </div>
+
+            <div class="event-info">
+              <p class="event-tag">Networking</p>
+              <h3 class="event-title">Networking sessions</h3>
+              <p class="event-location">Venue to be announced</p>
+              <p class="event-description">Meet professionals and fellow members in a relaxed setting, and start building the contacts that open doors.</p>
+            </div>
+
+          </article>
+          <!-- <<<<<<<<<< END OF ONE EVENT (copy to here) <<<<<<<<<< -->
+
+
+          <!-- >>>>>>>>>> START OF ONE EVENT (copy from here) >>>>>>>>>> -->
+          <article class="event">
+
+            <div class="event-date">
+              <span class="event-day">TBC</span>
+            </div>
+
+            <div class="event-info">
+              <p class="event-tag">Insight Trips</p>
+              <h3 class="event-title">Bank and firm visits</h3>
+              <p class="event-location">Locations to be announced</p>
+              <p class="event-description">Organised trips and insight programmes that take you inside banks and firms to see what the work is really like.</p>
+            </div>
+
+          </article>
+          <!-- <<<<<<<<<< END OF ONE EVENT (copy to here) <<<<<<<<<< -->
+
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ====================================================================
+         FOLLOW (social media links)
+         One card per platform. Instagram is switched on. The others are
+         ready and waiting, but hidden until you have real links.
+         ==================================================================== -->
+    <section id="follow" class="section">
+      <div class="container">
+
+        <p class="eyebrow">Follow</p>
+        <h2 class="section-title">Follow along.</h2>
+        <p class="section-intro">Our Instagram is where we share the latest. This website keeps the essentials, like who we are and how to reach us, neatly in one place.</p>
+
+        <div class="social-grid">
+
+          <!-- INSTAGRAM (switched on). href is where the card links to. -->
+          <a class="social-card" href="https://www.instagram.com/warwickaltinvestment/" target="_blank" rel="noopener">
+            <span class="social-platform">Instagram</span>
+            <span class="social-handle">@warwickaltinvestment</span>
+            <span class="social-arrow" aria-hidden="true">↗</span>
+          </a>
+
+          <!-- THE CARDS BELOW ARE SWITCHED OFF.
+               The word "hidden" at the end of each opening line hides the card
+               from visitors. TO SWITCH ONE ON:
+                 1. Replace PASTE-LINK-HERE with the real link to your page.
+                 2. Replace @your-handle with your real handle.
+                 3. Delete the word "hidden" from that card's first line.
+               Want a platform that isn't here (TikTok, YouTube...)? Copy any
+               card, paste it below, and change the name, link and handle. -->
+
+          <!-- LINKEDIN (switched off) -->
+          <a class="social-card" href="PASTE-LINK-HERE" target="_blank" rel="noopener" hidden>
+            <span class="social-platform">LinkedIn</span>
+            <span class="social-handle">@your-handle</span>
+            <span class="social-arrow" aria-hidden="true">↗</span>
+          </a>
+
+          <!-- X, FORMERLY TWITTER (switched off) -->
+          <a class="social-card" href="PASTE-LINK-HERE" target="_blank" rel="noopener" hidden>
+            <span class="social-platform">X</span>
+            <span class="social-handle">@your-handle</span>
+            <span class="social-arrow" aria-hidden="true">↗</span>
+          </a>
+
+          <!-- FACEBOOK (switched off) -->
+          <a class="social-card" href="PASTE-LINK-HERE" target="_blank" rel="noopener" hidden>
+            <span class="social-platform">Facebook</span>
+            <span class="social-handle">@your-handle</span>
+            <span class="social-arrow" aria-hidden="true">↗</span>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ====================================================================
+         CONTACT
+         Ways to reach the society: one row per person or channel.
+         ==================================================================== -->
+    <section id="contact" class="section section-tint">
+      <div class="container">
+
+        <p class="eyebrow">Contact</p>
+        <h2 class="section-title">Get in touch.</h2>
+        <p class="section-intro">Questions, speaker suggestions, or want to get involved? Email either of our co-founders, or message us on Instagram.</p>
+
+        <!-- Each row (li) is one way to get in touch. To add another person,
+             copy a whole row, from its opening li to its closing li, and
+             paste it below the last one. A link that starts with mailto:
+             opens the visitor's email app. Remember to change the email
+             address in TWO places in each row: after "mailto:" and in the
+             visible words. -->
+        <ul class="contact-list">
+
+          <li>
+            <div class="contact-person">
+              <span class="contact-name">Safwan Jamil</span>
+              <span class="contact-role">Co-Founder</span>
+            </div>
+            <a class="contact-link" href="mailto:safwan.jamil@warwick.ac.uk">safwan.jamil@warwick.ac.uk</a>
+          </li>
+
+          <li>
+            <div class="contact-person">
+              <span class="contact-name">Finn Coleman</span>
+              <span class="contact-role">Co-Founder</span>
+            </div>
+            <a class="contact-link" href="mailto:finn.coleman@warwick.ac.uk">finn.coleman@warwick.ac.uk</a>
+          </li>
+
+          <li>
+            <div class="contact-person">
+              <span class="contact-name">Instagram</span>
+              <span class="contact-role">Send us a message</span>
+            </div>
+            <a class="contact-link" href="https://www.instagram.com/warwickaltinvestment/" target="_blank" rel="noopener">@warwickaltinvestment</a>
+          </li>
+
+        </ul>
+
+      </div>
+    </section>
+
+
+  </main>
+
+
+  <!-- ======================================================================
+       FOOTER
+       The strip at the very bottom of the page.
+       ====================================================================== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; 2026 Warwick Alternative Investment Society</p>
+      <a href="#home">Back to top &uarr;</a>
+    </div>
+  </footer>
+
+
+</body>
+</html>

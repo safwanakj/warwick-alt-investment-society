@@ -1,0 +1,722 @@
+/* ============================================================================
+   WARWICK ALTERNATIVE INVESTMENT SOCIETY  |  style.css
+   ============================================================================
+   This file controls the LOOK of the website: colours, text sizes, spacing and
+   layout. The words themselves live in index.html.
+
+   HOW THIS FILE WORKS (in plain English)
+   * CSS is a list of RULES. Each rule says:
+         "find this part of the page   { and change how it looks }"
+     Example:   .button { color: white; }
+     means: "find everything labelled 'button' and make its text white".
+   * The names starting with a dot (like .button) match the class="button"
+     labels you can see in index.html.
+   * Text between a slash-star and a star-slash, like this note, is a
+     "comment": a note for humans that the browser ignores.
+
+   A FEW SIZE WORDS YOU WILL SEE
+   * px   = one pixel, a single tiny dot on the screen.
+   * rem  = a size relative to normal text. 1rem is about 16px, 2rem is double.
+   * %    = a share of the available space. 50% means half.
+   * vw   = 1% of the screen width. It makes things grow on bigger screens.
+
+   WHAT IS IN THIS FILE (in order)
+     1. Colours, font and sizes     <- start here to change the look
+     2. Basic page settings (includes the Events on/off switch)
+     3. Layout helpers
+     4. Text styles
+     5. Buttons
+     6. Nav bar
+     7. Home
+     8. About
+     9. Events
+    10. Follow (social links)
+    11. Contact
+    12. Footer
+    13. Screen-size adjustments (phones, tablets, computers)
+    14. Extras (keyboard focus and reduced motion)
+   ============================================================================ */
+
+
+/* ============================================================================
+   1. COLOURS, FONT AND SIZES   (change these first!)
+   ----------------------------------------------------------------------------
+   ":root" means "the whole page". The lines inside are VARIABLES: named values
+   we reuse all over this file with var(--name). Change a value here and every
+   place that uses it updates at once.
+
+   Colours are written as "hex codes" (#RRGGBB): a # followed by six characters
+   that mix red, green and blue. Search "hex colour picker" online to find one
+   you like, then paste its code here.
+   ============================================================================ */
+:root {
+  /* BACKGROUNDS (the very light greens) */
+  --bg:          #EEF7F0;   /* main page background */
+  --bg-tint:     #E0EFE4;   /* slightly deeper green for alternating sections */
+  --card:        #FFFFFF;   /* white background of cards (events, social links) */
+  --line:        #CDE3D4;   /* thin border lines */
+  --highlight:   #BEE3CB;   /* the marker effect under "obvious." in the headline */
+
+  /* GREENS (the accents) */
+  --green-dark:  #013E28;   /* dark green taken from the logo: big headings, buttons */
+  --green-hover: #0B5A3B;   /* the dark green when you hover over a button */
+  --green-mid:   #2A7050;   /* medium green for small labels */
+
+  /* TEXT COLOURS */
+  --text:        #12291F;   /* normal text */
+  --text-soft:   #4A6356;   /* softer text for less important lines */
+  --on-dark:     #EEF7F0;   /* text that sits on top of dark green */
+
+  /* FONT: the first name is used if available; the rest are backups. */
+  --font: "Manrope", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+  /* SIZES */
+  --page-width:  1120px;    /* the widest the content is allowed to get */
+  --radius:      20px;      /* how rounded the corners of cards are */
+}
+
+
+/* ============================================================================
+   2. BASIC PAGE SETTINGS
+   ============================================================================ */
+
+/* Makes widths behave the way you'd expect: padding and borders are counted
+   INSIDE a box's width instead of being added on top. "*" means "everything". */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  /* When a menu link jumps to a section, stop a little early so the sticky
+     nav bar doesn't cover the heading. */
+  scroll-padding-top: 5rem;
+}
+
+body {
+  margin: 0;                      /* removes the default gap around the page */
+  font-family: var(--font);
+  font-size: 1.05rem;
+  line-height: 1.65;              /* space between lines of text */
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;   /* slightly crisper text on Macs */
+}
+
+/* Pictures never spill outside their container. */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Links take on the colour of the text around them. We style them ourselves. */
+a {
+  color: inherit;
+}
+
+/* The "hidden" label in index.html. This line makes sure hidden things
+   really stay hidden. */
+[hidden] {
+  display: none !important;
+}
+
+/* THE EVENTS ON/OFF SWITCH (explained in index.html, just under the opening
+   body line). While the body carries the label "events-hidden", everything
+   labelled "events-only" (the Events section and its menu link) is NOT shown.
+   Delete "events-hidden" from the body line and they all come back. */
+.events-hidden .events-only {
+  display: none;
+}
+
+/* All headings share the same style: big, bold, tight and dark green. */
+h1, h2, h3 {
+  margin: 0;
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.03em;        /* pulls letters slightly closer: a sleeker look */
+  color: var(--green-dark);
+  text-wrap: balance;             /* spreads words evenly across lines */
+}
+
+
+/* ============================================================================
+   3. LAYOUT HELPERS
+   ============================================================================ */
+
+/* ".container" keeps content in a neat centred column, not stretched edge to
+   edge. The padding left and right keeps text off the edge of phone screens. */
+.container {
+  width: 100%;
+  max-width: var(--page-width);
+  margin: 0 auto;                 /* "auto" on the sides centres the box */
+  padding: 0 1.25rem;
+}
+
+/* ".section" gives every part of the page generous space above and below.
+   clamp(smallest, grows-with-screen, biggest) picks a size that grows on big
+   screens but never goes below the first number or above the last. */
+.section {
+  padding: clamp(4rem, 9vw, 7.5rem) 0;
+}
+
+/* A slightly deeper green background, used on alternating sections. */
+.section-tint {
+  background: var(--bg-tint);
+}
+
+
+/* ============================================================================
+   4. TEXT STYLES
+   ============================================================================ */
+
+/* The small capital-letter label above each heading. */
+.eyebrow {
+  margin: 0 0 1.25rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;         /* spreads the letters out */
+  text-transform: uppercase;      /* shows the text in CAPITALS */
+  color: var(--green-mid);
+}
+
+/* The big heading at the top of each section. */
+.section-title {
+  font-size: clamp(2.4rem, 6.5vw, 4.75rem);
+  max-width: 14ch;                /* "ch" is roughly one letter wide, so this keeps lines short */
+}
+
+/* The short paragraph under a section heading. */
+.section-intro {
+  margin: 1.5rem 0 0;
+  max-width: 38rem;
+  font-size: 1.15rem;
+  color: var(--text-soft);
+}
+
+
+/* ============================================================================
+   5. BUTTONS
+   ============================================================================ */
+.button {
+  display: inline-block;
+  padding: 0.95rem 1.6rem;
+  border: 2px solid var(--green-dark);
+  border-radius: 999px;           /* a huge number makes fully rounded ends */
+  font-weight: 700;
+  text-decoration: none;          /* removes the default underline on links */
+  /* "transition" makes colour and position changes glide instead of snap. */
+  transition: background-color 0.2s, border-color 0.2s, color 0.2s, transform 0.2s;
+}
+
+/* Filled button: dark green with light text. */
+.button-solid {
+  background: var(--green-dark);
+  color: var(--on-dark);
+}
+.button-solid:hover {             /* ":hover" = while the mouse is over it */
+  background: var(--green-hover);
+  border-color: var(--green-hover);
+  transform: translateY(-2px);    /* nudges it up 2px */
+}
+
+/* Outline button: see-through with dark green text; fills in on hover. */
+.button-outline {
+  background: transparent;
+  color: var(--green-dark);
+}
+.button-outline:hover {
+  background: var(--green-dark);
+  color: var(--on-dark);
+  transform: translateY(-2px);
+}
+
+/* The row that holds the buttons. "flex-wrap" lets them drop onto a second
+   line on narrow screens. */
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin-top: 2.25rem;
+}
+
+
+/* ============================================================================
+   6. NAV BAR
+   ============================================================================ */
+.site-header {
+  position: sticky;               /* "sticky" = stays at the top while you scroll */
+  top: 0;
+  z-index: 10;                    /* keeps the bar in front of everything else */
+  border-bottom: 1px solid var(--line);
+  background: var(--bg);          /* backup for older browsers */
+  /* Modern browsers: the page colour, slightly see-through, with a soft blur. */
+  background: color-mix(in srgb, var(--bg) 85%, transparent);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+}
+
+/* "flex" lays things out side by side. Here: logo on the left, links on the right. */
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  max-width: var(--page-width);
+  margin: 0 auto;
+  padding: 0.7rem 1.25rem;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+}
+
+.brand-logo {
+  width: 48px;
+  height: 48px;
+}
+
+.brand-name {
+  font-size: 0.85rem;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: var(--green-dark);
+}
+
+.nav-links {
+  display: flex;
+  gap: clamp(1rem, 3vw, 2.25rem);
+  margin: 0;
+  padding: 0;
+  list-style: none;               /* removes the bullet points */
+}
+
+.nav-links a {
+  padding: 0.4rem 0;
+  border-bottom: 2px solid transparent;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--text);
+  transition: border-color 0.2s;
+}
+.nav-links a:hover {
+  border-bottom-color: var(--green-dark);   /* a dark green underline appears */
+}
+
+
+/* ============================================================================
+   7. HOME (the big opening section)
+   ============================================================================ */
+.hero {
+  padding: clamp(4.5rem, 12vw, 9rem) 0 clamp(4rem, 9vw, 7rem);
+  /* A soft patch of deeper green glowing in the top-right corner. */
+  background:
+    radial-gradient(60rem 28rem at 90% -10%, var(--bg-tint) 0%, transparent 70%),
+    var(--bg);
+}
+
+/* THE BIG HEADLINE. The size grows with the screen: never smaller than 3.2rem,
+   never bigger than 8.5rem. */
+.hero-title {
+  font-size: clamp(3.2rem, 11.5vw, 8.5rem);
+  line-height: 0.95;
+  letter-spacing: -0.045em;
+  max-width: 11ch;
+}
+
+/* The pale green "marker pen" strip under the word "obvious."
+   The two percentages say where the strip starts and stops, measured from the
+   top of the word (66% = two-thirds of the way down). */
+.highlight {
+  background: linear-gradient(transparent 66%, var(--highlight) 66%, var(--highlight) 92%, transparent 92%);
+}
+
+.hero-text {
+  max-width: 34rem;
+  margin: 2.25rem 0 0;
+  font-size: clamp(1.1rem, 2vw, 1.3rem);
+  color: var(--text-soft);
+}
+
+
+/* ============================================================================
+   8. ABOUT
+   ============================================================================ */
+.about-text {
+  max-width: 46rem;
+  margin-top: 2.5rem;
+  color: var(--text-soft);
+}
+.about-text p {
+  margin: 0 0 1.25rem;
+}
+
+/* The first, larger paragraph. */
+.about-lead {
+  font-size: clamp(1.3rem, 2.6vw, 1.75rem);
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+  color: var(--text);
+}
+
+/* THE THREE CARDS. "grid" arranges items in rows and columns.
+   "1fr" means "one equal share of the space". On phones there is one column,
+   so the cards stack. (Section 13 switches to three columns on wider screens.) */
+.pillars {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  margin-top: 3.5rem;
+}
+
+.pillar {
+  padding: 1.75rem;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.pillar-number {
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: var(--green-mid);
+}
+
+.pillar h3 {
+  margin: 0.9rem 0 0.6rem;
+  font-size: 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+.pillar p {
+  margin: 0;
+  color: var(--text-soft);
+}
+
+
+/* ============================================================================
+   9. EVENTS
+   ============================================================================ */
+.events-list {
+  display: grid;
+  gap: 1.25rem;
+  margin-top: 3rem;
+}
+
+/* ONE EVENT CARD: the date badge on the left, the details on the right.
+   "auto 1fr" means: "badge = as wide as it needs; details = all the rest". */
+.event {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: start;
+  gap: clamp(1rem, 3vw, 2rem);
+  padding: clamp(1.1rem, 3vw, 1.75rem);
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.event:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 32px -20px rgba(1, 62, 40, 0.5);   /* a soft shadow under the card */
+}
+
+/* THE DARK DATE BADGE */
+.event-date {
+  display: flex;
+  flex-direction: column;         /* stacks the day above the month */
+  align-items: center;
+  justify-content: center;
+  min-width: 5.5rem;
+  min-height: 5.25rem;            /* keeps every badge the same height, even "TBC" ones */
+  padding: 0.9rem 0.5rem;
+  background: var(--green-dark);
+  color: var(--on-dark);
+  border-radius: 16px;
+  line-height: 1;
+}
+.event-day {
+  font-size: 2.25rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+.event-month {
+  margin-top: 0.4rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* The details on the right of the badge. */
+.event-info {
+  min-width: 0;                   /* stops very long words pushing the card wider than the screen */
+  overflow-wrap: anywhere;        /* lets very long words break onto the next line */
+}
+
+.event-tag {
+  margin: 0 0 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--green-mid);
+}
+
+.event-title {
+  font-size: clamp(1.4rem, 3vw, 1.9rem);
+  letter-spacing: -0.025em;
+}
+
+/* The location line, with a small green dot in front (drawn by "::before",
+   which adds a decoration without any extra HTML). */
+.event-location {
+  margin: 0.6rem 0 0;
+  font-weight: 600;
+}
+.event-location::before {
+  content: "";
+  display: inline-block;
+  width: 0.55rem;
+  height: 0.55rem;
+  margin-right: 0.55rem;
+  border-radius: 50%;             /* 50% turns a square into a circle */
+  background: var(--green-mid);
+}
+
+.event-description {
+  max-width: 40rem;
+  margin: 0.6rem 0 0;
+  color: var(--text-soft);
+}
+
+
+/* ============================================================================
+   10. FOLLOW (social links)
+   ============================================================================ */
+/* "auto-fill" keeps the column size steady, so a single card stays card-sized
+   instead of stretching across the whole page. */
+.social-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.25rem;
+  margin-top: 3rem;
+}
+
+.social-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 0.35rem;
+  min-height: 11rem;
+  padding: 1.75rem;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  text-decoration: none;
+  transition: background-color 0.2s, transform 0.2s;
+}
+.social-card:hover {
+  background: var(--green-dark);
+  transform: translateY(-3px);
+}
+
+.social-platform {
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--green-dark);
+  transition: color 0.2s;
+}
+
+.social-handle {
+  color: var(--text-soft);
+  transition: color 0.2s;
+}
+
+.social-arrow {
+  position: absolute;             /* pins the arrow to the top-right corner of the card */
+  top: 1.4rem;
+  right: 1.6rem;
+  font-size: 1.6rem;
+  color: var(--green-mid);
+  transition: transform 0.2s, color 0.2s;
+}
+
+/* When the mouse is over a card, the text turns light so it stays readable. */
+.social-card:hover .social-platform,
+.social-card:hover .social-handle,
+.social-card:hover .social-arrow {
+  color: var(--on-dark);
+}
+.social-card:hover .social-arrow {
+  transform: translate(3px, -3px);
+}
+
+
+/* ============================================================================
+   11. CONTACT
+   ============================================================================ */
+.contact-list {
+  margin: 3rem 0 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--line);
+}
+
+.contact-list li {
+  display: flex;
+  flex-wrap: wrap;                /* on narrow screens the link drops under the name */
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem 2rem;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+/* The name (or channel) on the left, with a small label stacked under it. */
+.contact-person {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  min-width: 12rem;
+}
+.contact-name {
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--green-dark);
+}
+.contact-role {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--green-mid);
+}
+
+.contact-link {
+  border-bottom: 2px solid transparent;
+  font-size: clamp(1.2rem, 3.6vw, 2.25rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+  color: var(--green-dark);
+  overflow-wrap: anywhere;
+  transition: border-color 0.2s;
+}
+.contact-link:hover {
+  border-bottom-color: var(--green-dark);
+}
+
+
+/* ============================================================================
+   12. FOOTER
+   ============================================================================ */
+.site-footer {
+  padding: 2.25rem 0;
+  font-size: 0.95rem;
+  background: var(--green-dark);
+  color: var(--on-dark);
+}
+
+.footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem 2rem;
+}
+
+.footer-inner p {
+  margin: 0;
+}
+
+.footer-inner a {
+  font-weight: 600;
+  text-decoration: none;
+}
+.footer-inner a:hover {
+  text-decoration: underline;
+}
+
+
+/* ============================================================================
+   13. SCREEN-SIZE ADJUSTMENTS (phones, tablets and computers)
+   ----------------------------------------------------------------------------
+   Rules inside an "@media" block ONLY apply when the screen matches the
+   condition. This is how one website adapts to different devices.
+   ============================================================================ */
+
+/* WIDER SCREENS: 700px wide or more (tablets and computers). */
+@media (min-width: 700px) {
+
+  /* Put the three About cards side by side. */
+  .pillars {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* PHONES: 640px wide or narrower. */
+@media (max-width: 640px) {
+
+  /* Hide the written name in the nav bar so the logo and the four links fit
+     on one line. (The full name still appears in the headline area.) */
+  .brand-name {
+    display: none;
+  }
+
+  .nav-links {
+    gap: 1rem;
+  }
+  .nav-links a {
+    padding: 0.6rem 0;            /* a taller area to tap with a thumb */
+    font-size: 0.9rem;
+  }
+
+  /* Make the two buttons the same width, one above the other. */
+  .button-row .button {
+    flex: 1 1 100%;
+    text-align: center;
+  }
+
+  /* Slightly smaller date badge so the event text has more room. */
+  .event-date {
+    min-width: 4.5rem;
+    min-height: 4.5rem;
+    padding: 0.7rem 0.35rem;
+  }
+  .event-day {
+    font-size: 1.8rem;
+  }
+
+  .contact-person {
+    min-width: 100%;              /* the name sits on its own line above the email */
+  }
+}
+
+
+/* ============================================================================
+   14. EXTRAS
+   ============================================================================ */
+
+/* Smooth scrolling when a menu link is clicked, but only for people who
+   haven't asked their device to reduce motion. */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* A clear outline around whatever link or button is selected when someone
+   navigates with the keyboard (Tab key). Important for accessibility. */
+a:focus-visible {
+  outline: 3px solid var(--green-mid);
+  outline-offset: 3px;
+}
