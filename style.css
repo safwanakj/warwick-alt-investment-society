@@ -399,6 +399,106 @@ h1, h2, h3 {
 }
 
 
+/* Each themed chunk of the About section (definition, asset classes, etc.). */
+.about-block {
+  margin-top: 4.5rem;
+}
+.about-block .about-text {
+  margin-top: 1.25rem;
+}
+.about-block .pillars {
+  margin-top: 2rem;
+}
+
+/* The medium heading that introduces each chunk. */
+.about-subtitle {
+  font-size: clamp(1.7rem, 3.6vw, 2.5rem);
+  letter-spacing: -0.025em;
+}
+.about-subtitle-spaced {
+  margin-top: 4.5rem;
+}
+
+/* A smaller note that sits under a block of cards or a list. */
+.about-footnote {
+  margin-top: 2rem;
+}
+
+/* "What we'll cover": a ruled list, one topic per row. */
+.topic-list {
+  max-width: 46rem;
+  margin: 1.75rem 0 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--line);
+  color: var(--text-soft);
+}
+.topic-list li {
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--line);
+}
+.topic-list strong {
+  display: block;
+  margin-bottom: 0.2rem;
+  font-size: 1.15rem;
+  letter-spacing: -0.01em;
+  color: var(--green-dark);
+}
+
+
+/* ============================================================================
+   8b. ESSENTIAL LINKS
+   ============================================================================ */
+.link-list {
+  display: grid;
+  gap: 1.25rem;
+  margin-top: 3rem;
+}
+
+/* One big tappable card: text on the left, arrow on the right. */
+.link-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  background: var(--green-dark);
+  border-radius: var(--radius);
+  text-decoration: none;
+  color: var(--on-dark);
+  transition: background-color 0.2s, transform 0.2s;
+}
+.link-card:hover {
+  background: var(--green-hover);
+  transform: translateY(-3px);
+}
+
+.link-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.link-title {
+  font-size: clamp(1.8rem, 4.5vw, 3rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+}
+.link-description {
+  max-width: 38rem;
+  font-size: 1.1rem;
+  color: var(--highlight);
+}
+.link-arrow {
+  flex: none;
+  font-size: clamp(2rem, 5vw, 3rem);
+  transition: transform 0.2s;
+}
+.link-card:hover .link-arrow {
+  transform: translate(4px, -4px);
+}
+
+
 /* ============================================================================
    9. EVENTS
    ============================================================================ */
