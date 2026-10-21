@@ -738,6 +738,11 @@ h1, h2, h3 {
   margin: 0;
 }
 
+.footer-note {
+  font-size: 0.85rem;
+  opacity: 0.75;
+}
+
 .footer-inner a {
   font-weight: 600;
   text-decoration: none;
