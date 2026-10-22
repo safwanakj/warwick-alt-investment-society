@@ -275,6 +275,7 @@ h1, h2, h3 {
 .brand-logo {
   width: 48px;
   height: 48px;
+  border-radius: 50%;             /* the logo is a round badge on a square picture */
 }
 
 .brand-name {
