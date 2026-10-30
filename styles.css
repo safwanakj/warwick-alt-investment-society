@@ -595,65 +595,6 @@ h1, h2, h3 {
 
 
 /* ============================================================================
-   8b. ESSENTIAL LINKS
-   ============================================================================ */
-.link-list {
-  display: grid;
-  gap: 1.25rem;
-  margin-top: 3rem;
-}
-
-/* One big tappable card: text on the left, arrow on the right. */
-.link-card {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1.5rem;
-  padding: clamp(1.5rem, 4vw, 2.5rem);
-  background: var(--card);
-  border: 2px solid var(--green-dark);
-  border-radius: var(--radius);
-  text-decoration: none;
-  color: var(--green-dark);
-  transition: background-color 0.2s, color 0.2s, transform 0.2s;
-}
-.link-card:hover {
-  background: var(--green-dark);
-  color: var(--on-dark);
-  transform: translateY(-3px);
-}
-
-.link-text {
-  display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
-}
-.link-title {
-  font-size: clamp(1.8rem, 4.5vw, 3rem);
-  font-weight: 800;
-  line-height: 1.05;
-  letter-spacing: -0.03em;
-}
-.link-description {
-  max-width: 38rem;
-  font-size: 1.1rem;
-  color: var(--text-soft);
-  transition: color 0.2s;
-}
-.link-card:hover .link-description {
-  color: var(--highlight);
-}
-.link-arrow {
-  flex: none;
-  font-size: clamp(2rem, 5vw, 3rem);
-  transition: transform 0.2s;
-}
-.link-card:hover .link-arrow {
-  transform: translate(4px, -4px);
-}
-
-
-/* ============================================================================
    9. EVENTS
    ============================================================================ */
 .events-list {
