@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<!-- WARWICK ALTERNATIVE INVESTMENT SOCIETY | contact.html
+     Each page of the site is its own file (index, about, get-involved, events,
+     follow, contact). They all share styles.css for the look. The nav bar and
+     footer are the same on every page: if you change one, change it in every file. -->
+<html lang="en-GB">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- The name shown on the browser tab and in Google search results. -->
+  <title>Contact | Warwick Alternative Investment Society</title>
+
+  <!-- The short summary Google shows under the title in search results. -->
+  <meta name="description" content="Get in touch with the Warwick Alternative Investment Society committee.">
+
+  <meta name="theme-color" content="#FFFFFF">
+  <link rel="icon" href="images/logo.png" type="image/png">
+
+  <!-- FONT: these three lines load the "Manrope" font from Google Fonts (free).
+       If you delete them the site still works; it just uses a plain default font. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Connects this page to styles.css, the file that controls the look.
+       All files must stay in the same folder for this to work. -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- VISITOR STATS (GoatCounter). Counts page views anonymously, with no
+       cookies. View the results at https://safwanakj.goatcounter.com -->
+  <script data-goatcounter="https://safwanakj.goatcounter.com/count"
+          async src="//gc.zgo.at/count.js"></script>
+</head>
+
+<body id="top">
+
+
+  <header class="site-header">
+    <nav class="nav" aria-label="Main menu">
+      <a class="brand" href="index.html">
+        <img class="brand-logo" src="images/logo.png" alt="Warwick Alternative Investment Society logo">
+        <span class="brand-name">Warwick Alternative<br>Investment Society</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="get-involved.html">Get involved</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="follow.html">Follow</a></li>
+        <li><a class="active" href="contact.html" aria-current="page">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <main>
+
+    <!-- The light green band at the top of the page, with the button back home. -->
+    <section class="page-header">
+      <div class="container">
+        <a class="button button-outline button-back" href="index.html"><span aria-hidden="true">&larr;</span> Back to home</a>
+        <p class="eyebrow">Contact</p>
+        <h1 class="section-title">Get in touch.</h1>
+        <p class="section-intro">Questions, speaker suggestions, or want to get involved? Email any of our committee, or message us on Instagram.</p>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         CONTACT
+         Ways to reach the society: one row per person or channel.
+         ==================================================================== -->
+    <section id="contact" class="section">
+      <div class="container">
+
+
+        <!-- Each row (li) is one way to get in touch. To add another person,
+             copy a whole row, from its opening li to its closing li, and
+             paste it below the last one. A link that starts with mailto:
+             opens the visitor's email app. Remember to change the email
+             address in TWO places in each row: after "mailto:" and in the
+             visible words. -->
+        <ul class="contact-list">
+
+          <li>
+            <div class="contact-person">
+              <span class="contact-name">Finn Coleman</span>
+              <span class="contact-role">President</span>
+            </div>
+            <a class="contact-link" href="mailto:finn.coleman@warwick.ac.uk">finn.coleman@warwick.ac.uk</a>
+          </li>
+
+          <li>
+            <div class="contact-person">
+              <span class="contact-name">Safwan Jamil</span>
+              <span class="contact-role">Treasurer</span>
+            </div>
+            <a class="contact-link" href="mailto:safwan.jamil@warwick.ac.uk">safwan.jamil@warwick.ac.uk</a>
+          </li>
+
+          <li>
+            <div class="contact-person">
+              <span class="contact-name">Morgan Ambrose</span>
+              <span class="contact-role">Welfare Officer</span>
+            </div>
+            <a class="contact-link" href="mailto:morgan.ambrose@warwick.ac.uk">morgan.ambrose@warwick.ac.uk</a>
+          </li>
+
+          <li>
+            <div class="contact-person">
+              <span class="contact-name">Instagram</span>
+              <span class="contact-role">Send us a message</span>
+            </div>
+            <a class="contact-link" href="https://www.instagram.com/warwickalternativeinvestment/" target="_blank" rel="noopener">@warwickalternativeinvestment</a>
+          </li>
+
+        </ul>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; 2026 Warwick Alternative Investment Society<br><span class="footer-note">This site uses anonymous, cookie-free analytics (GoatCounter).</span></p>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="#top">Back to top &uarr;</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<!-- WARWICK ALTERNATIVE INVESTMENT SOCIETY | follow.html
+     Each page of the site is its own file (index, about, get-involved, events,
+     follow, contact). They all share styles.css for the look. The nav bar and
+     footer are the same on every page: if you change one, change it in every file. -->
+<html lang="en-GB">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- The name shown on the browser tab and in Google search results. -->
+  <title>Follow | Warwick Alternative Investment Society</title>
+
+  <!-- The short summary Google shows under the title in search results. -->
+  <meta name="description" content="Follow Warwick Alternative Investment Society on social media.">
+
+  <meta name="theme-color" content="#FFFFFF">
+  <link rel="icon" href="images/logo.png" type="image/png">
+
+  <!-- FONT: these three lines load the "Manrope" font from Google Fonts (free).
+       If you delete them the site still works; it just uses a plain default font. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Connects this page to styles.css, the file that controls the look.
+       All files must stay in the same folder for this to work. -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- VISITOR STATS (GoatCounter). Counts page views anonymously, with no
+       cookies. View the results at https://safwanakj.goatcounter.com -->
+  <script data-goatcounter="https://safwanakj.goatcounter.com/count"
+          async src="//gc.zgo.at/count.js"></script>
+</head>
+
+<body id="top">
+
+
+  <header class="site-header">
+    <nav class="nav" aria-label="Main menu">
+      <a class="brand" href="index.html">
+        <img class="brand-logo" src="images/logo.png" alt="Warwick Alternative Investment Society logo">
+        <span class="brand-name">Warwick Alternative<br>Investment Society</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="get-involved.html">Get involved</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a class="active" href="follow.html" aria-current="page">Follow</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <main>
+
+    <!-- The light green band at the top of the page, with the button back home. -->
+    <section class="page-header">
+      <div class="container">
+        <a class="button button-outline button-back" href="index.html"><span aria-hidden="true">&larr;</span> Back to home</a>
+        <p class="eyebrow">Follow</p>
+        <h1 class="section-title">Follow along.</h1>
+        <p class="section-intro">Our Instagram is where we share the latest. This website keeps the essentials, like who we are and how to reach us, neatly in one place.</p>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         FOLLOW (social media links)
+         One card per platform. Instagram is switched on. The others are
+         ready and waiting, but hidden until you have real links.
+         ==================================================================== -->
+    <section id="follow" class="section">
+      <div class="container">
+
+
+        <div class="social-grid">
+
+          <!-- INSTAGRAM (switched on). href is where the card links to. -->
+          <a class="social-card" href="https://www.instagram.com/warwickalternativeinvestment/" target="_blank" rel="noopener">
+            <span class="social-platform">Instagram</span>
+            <span class="social-handle">@warwickalternativeinvestment</span>
+            <span class="social-arrow" aria-hidden="true">↗</span>
+          </a>
+
+          <!-- THE CARDS BELOW ARE SWITCHED OFF.
+               The word "hidden" at the end of each opening line hides the card
+               from visitors. TO SWITCH ONE ON:
+                 1. Replace PASTE-LINK-HERE with the real link to your page.
+                 2. Replace @your-handle with your real handle.
+                 3. Delete the word "hidden" from that card's first line.
+               Want a platform that isn't here (TikTok, YouTube...)? Copy any
+               card, paste it below, and change the name, link and handle. -->
+
+          <!-- LINKEDIN (switched off) -->
+          <a class="social-card" href="PASTE-LINK-HERE" target="_blank" rel="noopener" hidden>
+            <span class="social-platform">LinkedIn</span>
+            <span class="social-handle">@your-handle</span>
+            <span class="social-arrow" aria-hidden="true">↗</span>
+          </a>
+
+          <!-- X, FORMERLY TWITTER (switched off) -->
+          <a class="social-card" href="PASTE-LINK-HERE" target="_blank" rel="noopener" hidden>
+            <span class="social-platform">X</span>
+            <span class="social-handle">@your-handle</span>
+            <span class="social-arrow" aria-hidden="true">↗</span>
+          </a>
+
+          <!-- FACEBOOK (switched off) -->
+          <a class="social-card" href="PASTE-LINK-HERE" target="_blank" rel="noopener" hidden>
+            <span class="social-platform">Facebook</span>
+            <span class="social-handle">@your-handle</span>
+            <span class="social-arrow" aria-hidden="true">↗</span>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; 2026 Warwick Alternative Investment Society<br><span class="footer-note">This site uses anonymous, cookie-free analytics (GoatCounter).</span></p>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="#top">Back to top &uarr;</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

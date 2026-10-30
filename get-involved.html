@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<!-- WARWICK ALTERNATIVE INVESTMENT SOCIETY | get-involved.html
+     Each page of the site is its own file (index, about, get-involved, events,
+     follow, contact). They all share styles.css for the look. The nav bar and
+     footer are the same on every page: if you change one, change it in every file. -->
+<html lang="en-GB">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- The name shown on the browser tab and in Google search results. -->
+  <title>Get involved | Warwick Alternative Investment Society</title>
+
+  <!-- The short summary Google shows under the title in search results. -->
+  <meta name="description" content="Register your interest and help us create Warwick Alternative Investment Society, or put yourself forward for an exec position.">
+
+  <meta name="theme-color" content="#FFFFFF">
+  <link rel="icon" href="images/logo.png" type="image/png">
+
+  <!-- FONT: these three lines load the "Manrope" font from Google Fonts (free).
+       If you delete them the site still works; it just uses a plain default font. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Connects this page to styles.css, the file that controls the look.
+       All files must stay in the same folder for this to work. -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- VISITOR STATS (GoatCounter). Counts page views anonymously, with no
+       cookies. View the results at https://safwanakj.goatcounter.com -->
+  <script data-goatcounter="https://safwanakj.goatcounter.com/count"
+          async src="//gc.zgo.at/count.js"></script>
+</head>
+
+<body id="top">
+
+
+  <header class="site-header">
+    <nav class="nav" aria-label="Main menu">
+      <a class="brand" href="index.html">
+        <img class="brand-logo" src="images/logo.png" alt="Warwick Alternative Investment Society logo">
+        <span class="brand-name">Warwick Alternative<br>Investment Society</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="about.html">About</a></li>
+        <li><a class="active" href="get-involved.html" aria-current="page">Get involved</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="follow.html">Follow</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <main>
+
+    <!-- The light green band at the top of the page, with the button back home. -->
+    <section class="page-header">
+      <div class="container">
+        <a class="button button-outline button-back" href="index.html"><span aria-hidden="true">&larr;</span> Back to home</a>
+        <p class="eyebrow">Essential links</p>
+        <h1 class="section-title">Get involved.</h1>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         ESSENTIAL LINKS
+         The most important links, in one place. Each link is one "link-card".
+         TO ADD ANOTHER (an event sign-up, a newsletter, etc.): copy a whole
+         link-card block (from its opening a tag to its closing a tag), paste
+         it below the last one, and change the link, title and description.
+         ==================================================================== -->
+    <section id="links" class="section">
+      <div class="container">
+
+
+        <div class="link-list">
+
+          <!-- data-goatcounter-click makes GoatCounter count each click on this card
+               as an event with the given name. Give new links their own name. -->
+          <a class="link-card" data-goatcounter-click="interest-form" data-goatcounter-title="Register your interest form" href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=vc-6Ce9HZUSSZTVG8ur2vMp9rB9g6YtKvBjVlMVoHbdUOEQwUTFTUDRYS1MzMk5JUldYRFYwN1pQRC4u" target="_blank" rel="noopener">
+            <span class="link-text">
+              <span class="link-title">Register your interest</span>
+              <span class="link-description">Help us get our society created by registering your interest. You can also put yourself forward for an exec position and be part of the founding team.</span>
+            </span>
+            <span class="link-arrow" aria-hidden="true">↗</span>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; 2026 Warwick Alternative Investment Society<br><span class="footer-note">This site uses anonymous, cookie-free analytics (GoatCounter).</span></p>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="#top">Back to top &uarr;</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

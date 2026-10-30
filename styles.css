@@ -22,7 +22,7 @@
 
    WHAT IS IN THIS FILE (in order)
      1. Colours, font and sizes     <- start here to change the look
-     2. Basic page settings (includes the Events on/off switch)
+     2. Basic page settings
      3. Layout helpers
      4. Text styles
      5. Buttons
@@ -50,9 +50,11 @@
    you like, then paste its code here.
    ============================================================================ */
 :root {
-  /* BACKGROUNDS (the very light greens) */
-  --bg:          #EEF7F0;   /* main page background */
-  --bg-tint:     #E0EFE4;   /* slightly deeper green for alternating sections */
+  /* THE COLOUR BALANCE: roughly 70% white, 20% light green, 10% dark green. */
+
+  /* BACKGROUNDS */
+  --bg:          #FFFFFF;   /* main page background */
+  --bg-tint:     #EEF7F0;   /* light green: page-top bands and cards on white */
   --card:        #FFFFFF;   /* white background of cards (events, social links) */
   --line:        #CDE3D4;   /* thin border lines */
   --highlight:   #BEE3CB;   /* the marker effect under "obvious." in the headline */
@@ -93,6 +95,9 @@ html {
 }
 
 body {
+  display: flex;                  /* with the two "main" rules below, keeps the footer at the */
+  flex-direction: column;         /* bottom of the screen on short pages */
+  min-height: 100vh;
   margin: 0;                      /* removes the default gap around the page */
   font-family: var(--font);
   font-size: 1.05rem;
@@ -100,6 +105,15 @@ body {
   color: var(--text);
   background: var(--bg);
   -webkit-font-smoothing: antialiased;   /* slightly crisper text on Macs */
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+main > section:last-of-type {
+  flex: 1;                        /* the last section fills any spare height */
 }
 
 /* Pictures never spill outside their container. */
@@ -117,14 +131,6 @@ a {
    really stay hidden. */
 [hidden] {
   display: none !important;
-}
-
-/* THE EVENTS ON/OFF SWITCH (explained in index.html, just under the opening
-   body line). While the body carries the label "events-hidden", everything
-   labelled "events-only" (the Events section and its menu link) is NOT shown.
-   Delete "events-hidden" from the body line and they all come back. */
-.events-hidden .events-only {
-  display: none;
 }
 
 /* All headings share the same style: big, bold, tight and dark green. */
@@ -158,9 +164,46 @@ h1, h2, h3 {
   padding: clamp(4rem, 9vw, 7.5rem) 0;
 }
 
-/* A slightly deeper green background, used on alternating sections. */
+/* A light green background, used on alternating sections. */
 .section-tint {
   background: var(--bg-tint);
+}
+
+/* The closing call to action on a page. */
+.section-cta {
+  padding-top: 0;
+}
+
+.cta-title {
+  font-size: clamp(1.7rem, 3.6vw, 2.5rem);
+  letter-spacing: -0.025em;
+}
+
+.cta-text {
+  max-width: 38rem;
+  margin: 1rem 0 0;
+  color: var(--text-soft);
+}
+
+/* The light green band at the top of every page except Home. */
+.page-header {
+  padding: clamp(2rem, 4vw, 3rem) 0 clamp(3rem, 6vw, 4.5rem);
+  background: var(--bg-tint);
+}
+
+/* The section straight after that band starts a little closer to it, and its
+   first item doesn't need any extra gap above it. */
+.page-header + .section {
+  padding-top: clamp(3rem, 6vw, 4.5rem);
+}
+.page-header + .section .container > :first-child {
+  margin-top: 0;
+}
+
+/* Page-top headings are a little smaller than the ones further down. */
+.page-header .section-title {
+  font-size: clamp(2.2rem, 5vw, 3.75rem);
+  max-width: 18ch;
 }
 
 
@@ -227,6 +270,15 @@ h1, h2, h3 {
   background: var(--green-dark);
   color: var(--on-dark);
   transform: translateY(-2px);
+}
+
+/* The smaller "Back to home" button at the top of each page. */
+.button-back {
+  display: inline-block;
+  margin-bottom: 2rem;
+  padding: 0.45rem 1.05rem;
+  border-width: 1.5px;
+  font-size: 0.9rem;
 }
 
 /* The row that holds the buttons. "flex-wrap" lets them drop onto a second
@@ -303,7 +355,8 @@ h1, h2, h3 {
   color: var(--text);
   transition: border-color 0.2s;
 }
-.nav-links a:hover {
+.nav-links a:hover,
+.nav-links a.active {                       /* "active" = the page you are on */
   border-bottom-color: var(--green-dark);   /* a dark green underline appears */
 }
 
@@ -399,6 +452,26 @@ h1, h2, h3 {
   color: var(--text-soft);
 }
 
+/* On a white section the cards turn light green, so they still stand out. */
+.section:not(.section-tint) .pillar {
+  background: var(--bg-tint);
+  border-color: transparent;
+}
+
+
+/* The "Read more" link at the bottom of a card on the home page. */
+.pillar-link {
+  display: inline-block;
+  margin-top: 1.1rem;
+  border-bottom: 2px solid transparent;
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--green-dark);
+  transition: border-color 0.2s;
+}
+.pillar-link:hover {
+  border-bottom-color: var(--green-dark);
+}
 
 /* Each themed chunk of the About section (definition, asset classes, etc.). */
 .about-block {
@@ -447,6 +520,80 @@ h1, h2, h3 {
 }
 
 
+/* An underlined link inside a paragraph. */
+.text-link {
+  font-weight: 700;
+  color: var(--green-dark);
+}
+
+/* The line near the top of the About page that points to the glossary. */
+.about-text .glossary-prompt {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem 1rem;
+  margin-top: 1.75rem;
+  font-weight: 600;
+  color: var(--text);
+}
+.glossary-prompt .button {
+  padding: 0.55rem 1.2rem;
+  font-size: 0.95rem;
+}
+
+/* THE GLOSSARY */
+.section-glossary {
+  border-top: 1px solid var(--line);
+}
+
+/* The row of small buttons that jump to each group of terms. */
+.glossary-jump {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 2rem;
+}
+.glossary-chip {
+  padding: 0.4rem 0.95rem;
+  background: var(--bg-tint);
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--green-dark);
+  transition: background-color 0.2s, color 0.2s;
+}
+.glossary-chip:hover {
+  background: var(--green-dark);
+  color: var(--on-dark);
+}
+
+.glossary-group {
+  margin-top: 4rem;
+}
+
+/* The terms: one column on phones, two on wider screens (see section 13). */
+.glossary-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0 3rem;
+  margin: 1.25rem 0 0;
+}
+.glossary-list > div {
+  padding: 1.1rem 0;
+  border-top: 1px solid var(--line);
+}
+.glossary-list dt {
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: var(--green-dark);
+}
+.glossary-list dd {
+  margin: 0.25rem 0 0;
+  color: var(--text-soft);
+}
+
+
 /* ============================================================================
    8b. ESSENTIAL LINKS
    ============================================================================ */
@@ -463,14 +610,16 @@ h1, h2, h3 {
   justify-content: space-between;
   gap: 1.5rem;
   padding: clamp(1.5rem, 4vw, 2.5rem);
-  background: var(--green-dark);
+  background: var(--card);
+  border: 2px solid var(--green-dark);
   border-radius: var(--radius);
   text-decoration: none;
-  color: var(--on-dark);
-  transition: background-color 0.2s, transform 0.2s;
+  color: var(--green-dark);
+  transition: background-color 0.2s, color 0.2s, transform 0.2s;
 }
 .link-card:hover {
-  background: var(--green-hover);
+  background: var(--green-dark);
+  color: var(--on-dark);
   transform: translateY(-3px);
 }
 
@@ -488,6 +637,10 @@ h1, h2, h3 {
 .link-description {
   max-width: 38rem;
   font-size: 1.1rem;
+  color: var(--text-soft);
+  transition: color 0.2s;
+}
+.link-card:hover .link-description {
   color: var(--highlight);
 }
 .link-arrow {
@@ -525,6 +678,36 @@ h1, h2, h3 {
 .event:hover {
   transform: translateY(-3px);
   box-shadow: 0 16px 32px -20px rgba(1, 62, 40, 0.5);   /* a soft shadow under the card */
+}
+
+/* An event that is planned but not yet confirmed gets a dashed border. */
+.event-planned {
+  border: 1.5px dashed var(--green-mid);
+}
+
+/* The "Programme in development" label above the event list. */
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0;
+  padding: 0.4rem 1rem;
+  background: var(--bg-tint);
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--green-dark);
+}
+.status-dot {
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  background: var(--green-mid);
+}
+.status-pill + .events-list {
+  margin-top: 1.75rem;
 }
 
 /* THE DARK DATE BADGE */
@@ -721,7 +904,7 @@ h1, h2, h3 {
    12. FOOTER
    ============================================================================ */
 .site-footer {
-  padding: 2.25rem 0;
+  padding: 2rem 0;
   font-size: 0.95rem;
   background: var(--green-dark);
   color: var(--on-dark);
@@ -742,6 +925,11 @@ h1, h2, h3 {
 .footer-note {
   font-size: 0.85rem;
   opacity: 0.75;
+}
+
+.footer-links {
+  display: flex;
+  gap: 1.5rem;
 }
 
 .footer-inner a {
@@ -767,19 +955,38 @@ h1, h2, h3 {
   .pillars {
     grid-template-columns: repeat(3, 1fr);
   }
+
+  /* Two columns of glossary terms. */
+  .glossary-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 /* PHONES: 640px wide or narrower. */
 @media (max-width: 640px) {
 
-  /* Hide the written name in the nav bar so the logo and the four links fit
-     on one line. (The full name still appears in the headline area.) */
+  /* Hide the written name in the nav bar to give the links more room. (The full name still appears in the headline area.) */
   .brand-name {
     display: none;
   }
 
+  /* The nav bar is taller here, so stop further above a jumped-to heading. */
+  html {
+    scroll-padding-top: 8rem;
+  }
+
+  /* The logo sits on its own line with the five links underneath. */
+  .nav {
+    flex-wrap: wrap;
+    gap: 0.25rem;
+  }
   .nav-links {
-    gap: 1rem;
+    flex-wrap: wrap;
+    gap: 0 0.9rem;
+    width: 100%;
+  }
+  .nav-links li {
+    white-space: nowrap;
   }
   .nav-links a {
     padding: 0.6rem 0;            /* a taller area to tap with a thumb */

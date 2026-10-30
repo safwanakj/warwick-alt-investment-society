@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<!-- WARWICK ALTERNATIVE INVESTMENT SOCIETY | events.html
+     Each page of the site is its own file (index, about, get-involved, events,
+     follow, contact). They all share styles.css for the look. The nav bar and
+     footer are the same on every page: if you change one, change it in every file. -->
+<html lang="en-GB">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- The name shown on the browser tab and in Google search results. -->
+  <title>Events | Warwick Alternative Investment Society</title>
+
+  <!-- The short summary Google shows under the title in search results. -->
+  <meta name="description" content="Upcoming events from Warwick Alternative Investment Society: speakers, networking sessions and insight trips.">
+
+  <meta name="theme-color" content="#FFFFFF">
+  <link rel="icon" href="images/logo.png" type="image/png">
+
+  <!-- FONT: these three lines load the "Manrope" font from Google Fonts (free).
+       If you delete them the site still works; it just uses a plain default font. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Connects this page to styles.css, the file that controls the look.
+       All files must stay in the same folder for this to work. -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- VISITOR STATS (GoatCounter). Counts page views anonymously, with no
+       cookies. View the results at https://safwanakj.goatcounter.com -->
+  <script data-goatcounter="https://safwanakj.goatcounter.com/count"
+          async src="//gc.zgo.at/count.js"></script>
+</head>
+
+<body id="top">
+
+
+  <header class="site-header">
+    <nav class="nav" aria-label="Main menu">
+      <a class="brand" href="index.html">
+        <img class="brand-logo" src="images/logo.png" alt="Warwick Alternative Investment Society logo">
+        <span class="brand-name">Warwick Alternative<br>Investment Society</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="get-involved.html">Get involved</a></li>
+        <li><a class="active" href="events.html" aria-current="page">Events</a></li>
+        <li><a href="follow.html">Follow</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <main>
+
+    <!-- The light green band at the top of the page, with the button back home. -->
+    <section class="page-header">
+      <div class="container">
+        <a class="button button-outline button-back" href="index.html"><span aria-hidden="true">&larr;</span> Back to home</a>
+        <p class="eyebrow">Events</p>
+        <h1 class="section-title">What's coming up.</h1>
+        <p class="section-intro">We're putting our first programme together now. Here's what to expect. Dates, speakers and venues will be announced here and on our Instagram as soon as they're confirmed.</p>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         EVENTS
+         Our programme is still being planned, so the cards below describe the
+         TYPES of event to expect, each with its date "to be announced" (TBA).
+         ==================================================================== -->
+    <section id="events" class="section">
+      <div class="container">
+
+        <!-- The status label. Delete it once real dates are listed. -->
+        <p class="status-pill"><span class="status-dot" aria-hidden="true"></span>Programme in development</p>
+
+        <!-- ================================================================
+             HOW TO ADD, EDIT OR REMOVE AN EVENT
+
+             Every event is ONE block. A block starts at the line that says
+             "START OF ONE EVENT" and ends at the line that says
+             "END OF ONE EVENT".
+
+             TO ADD A NEW EVENT
+               1. Select everything from "START OF ONE EVENT" down to
+                  "END OF ONE EVENT" and copy it.
+               2. Paste it directly above or below another event
+                  (never in the middle of one).
+               3. Change the date, type, title, location and description.
+                  For the date badge, replace TBA with the day number and
+                  add a second line for the month, like this:
+                      <span class="event-day">12</span>
+                      <span class="event-month">Nov</span>
+               4. Delete the word "event-planned" from the first line of the
+                  block. It gives unconfirmed events their dashed border.
+               5. Save the file, then refresh the page in your browser.
+
+             TO REMOVE AN EVENT: delete its whole block, start to end.
+
+             Events show in the same order as they appear in this file, so put
+             the soonest one first.
+             ================================================================ -->
+        <div class="events-list">
+
+          <!-- >>>>>>>>>> START OF ONE EVENT (copy from here) >>>>>>>>>> -->
+          <article class="event event-planned">
+
+            <!-- The dark date badge. "TBA" means "to be announced". -->
+            <div class="event-date">
+              <span class="event-day">TBA</span>
+            </div>
+
+            <!-- The event details. -->
+            <div class="event-info">
+              <!-- Type of event, e.g. Speakers, Networking, Insight Days (or anything you like). -->
+              <p class="event-tag">Speakers</p>
+              <!-- Event title. -->
+              <h3 class="event-title">Specialist speaker events</h3>
+              <!-- Where it takes place. -->
+              <p class="event-location">Speakers and venue to be announced</p>
+              <!-- A short description: one or two sentences. -->
+              <p class="event-description">Practitioners from less-travelled corners of finance talk about their work and the route they took to get there.</p>
+            </div>
+
+          </article>
+          <!-- <<<<<<<<<< END OF ONE EVENT (copy to here) <<<<<<<<<< -->
+
+          <!-- >>>>>>>>>> START OF ONE EVENT (copy from here) >>>>>>>>>> -->
+          <article class="event event-planned">
+
+            <div class="event-date">
+              <span class="event-day">TBA</span>
+            </div>
+
+            <div class="event-info">
+              <p class="event-tag">Networking</p>
+              <h3 class="event-title">Networking sessions</h3>
+              <p class="event-location">Venue to be announced</p>
+              <p class="event-description">Meet professionals and fellow members in a relaxed setting, and start building the contacts that open doors.</p>
+            </div>
+
+          </article>
+          <!-- <<<<<<<<<< END OF ONE EVENT (copy to here) <<<<<<<<<< -->
+
+          <!-- >>>>>>>>>> START OF ONE EVENT (copy from here) >>>>>>>>>> -->
+          <article class="event event-planned">
+
+            <div class="event-date">
+              <span class="event-day">TBA</span>
+            </div>
+
+            <div class="event-info">
+              <p class="event-tag">Insight Days</p>
+              <h3 class="event-title">Firm visits</h3>
+              <p class="event-location">Firms and locations to be announced</p>
+              <p class="event-description">Organised visits and insight programmes that take you inside firms to see what the work is really like.</p>
+            </div>
+
+          </article>
+          <!-- <<<<<<<<<< END OF ONE EVENT (copy to here) <<<<<<<<<< -->
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         BE THE FIRST TO KNOW
+         ==================================================================== -->
+    <section class="section section-cta">
+      <div class="container">
+        <h2 class="cta-title">Be the first to know.</h2>
+        <p class="cta-text">Register your interest and follow us on Instagram to hear as soon as dates are confirmed. Know someone we should invite to speak? <a class="text-link" href="contact.html">Tell us</a>.</p>
+        <div class="button-row">
+          <a class="button button-solid" data-goatcounter-click="interest-form-events" data-goatcounter-title="Register your interest form (events page)" href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=vc-6Ce9HZUSSZTVG8ur2vMp9rB9g6YtKvBjVlMVoHbdUOEQwUTFTUDRYS1MzMk5JUldYRFYwN1pQRC4u" target="_blank" rel="noopener">Register your interest</a>
+          <a class="button button-outline" href="https://www.instagram.com/warwickalternativeinvestment/" target="_blank" rel="noopener">Follow on Instagram</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; 2026 Warwick Alternative Investment Society<br><span class="footer-note">This site uses anonymous, cookie-free analytics (GoatCounter).</span></p>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="#top">Back to top &uarr;</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
