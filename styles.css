@@ -595,6 +595,84 @@ h1, h2, h3 {
 
 
 /* ============================================================================
+   8b. APPLY (exec positions)
+   ============================================================================ */
+
+/* The four key facts: two columns on phones, four on wider screens (see 13). */
+.facts {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.fact {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 1.25rem 1.4rem;
+  background: var(--bg-tint);
+  border-radius: var(--radius);
+}
+.fact-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--green-mid);
+}
+.fact-value {
+  font-size: clamp(1.25rem, 2.6vw, 1.6rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--green-dark);
+}
+
+.apply-note {
+  max-width: 46rem;
+  margin: 1.5rem 0 0;
+  font-weight: 600;
+  color: var(--text);
+}
+
+/* The position cards: one column on phones, two on wider screens. */
+.role-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+.role-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: clamp(1.5rem, 3vw, 2rem);
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.role-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 32px -20px rgba(1, 62, 40, 0.5);
+}
+.role-title {
+  font-size: clamp(1.4rem, 3vw, 1.9rem);
+  letter-spacing: -0.025em;
+}
+.role-description {
+  flex: 1;                        /* keeps the buttons lined up along the bottom */
+  margin: 0.6rem 0 1.5rem;
+  color: var(--text-soft);
+}
+.role-button {
+  padding: 0.7rem 1.4rem;
+}
+
+
+/* ============================================================================
    9. EVENTS
    ============================================================================ */
 .events-list {
@@ -895,6 +973,14 @@ h1, h2, h3 {
   /* Put the three About cards side by side. */
   .pillars {
     grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Four key facts in a row, and the position cards two by two. */
+  .facts {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .role-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   /* Two columns of glossary terms. */

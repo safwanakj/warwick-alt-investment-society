@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<!-- WARWICK ALTERNATIVE INVESTMENT SOCIETY | apply.html
+     Each page of the site is its own file (index, about, events, apply,
+     follow, contact). They all share styles.css for the look. The nav bar and
+     footer are the same on every page: if you change one, change it in every file. -->
+<html lang="en-GB">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- The name shown on the browser tab and in Google search results. -->
+  <title>Apply | Warwick Alternative Investment Society</title>
+
+  <!-- The short summary Google shows under the title in search results. -->
+  <meta name="description" content="Apply for an exec position at Warwick Alternative Investment Society: Event Coordinator, Social Media, Research Analyst or Speaker Series Lead.">
+
+  <meta name="theme-color" content="#FFFFFF">
+  <link rel="icon" href="images/logo.png" type="image/png">
+
+  <!-- FONT: these three lines load the "Manrope" font from Google Fonts (free).
+       If you delete them the site still works; it just uses a plain default font. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Connects this page to styles.css, the file that controls the look.
+       All files must stay in the same folder for this to work. -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- VISITOR STATS (GoatCounter). Counts page views anonymously, with no
+       cookies. View the results at https://safwanakj.goatcounter.com -->
+  <script data-goatcounter="https://safwanakj.goatcounter.com/count"
+          async src="//gc.zgo.at/count.js"></script>
+</head>
+
+<body id="top">
+
+
+  <header class="site-header">
+    <nav class="nav" aria-label="Main menu">
+      <a class="brand" href="index.html">
+        <img class="brand-logo" src="images/logo.png" alt="Warwick Alternative Investment Society logo">
+        <span class="brand-name">Warwick Alternative<br>Investment Society</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a class="active" href="apply.html" aria-current="page">Apply</a></li>
+        <li><a href="follow.html">Follow</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <main>
+
+    <!-- The light green band at the top of the page, with the button back home. -->
+    <section class="page-header">
+      <div class="container">
+        <a class="button button-outline button-back" href="index.html"><span aria-hidden="true">&larr;</span> Back to home</a>
+        <p class="eyebrow">Exec applications</p>
+        <h1 class="section-title">Apply for an exec position.</h1>
+        <p class="section-intro">Thank you to everyone who registered their interest. We're now inviting applications for our founding exec team. Each position has its own short written-question form.</p>
+      </div>
+    </section>
+
+
+    <!-- ====================================================================
+         KEY DATES AND RULES
+         Update the weeks here if the timeline changes.
+         ==================================================================== -->
+    <section id="apply" class="section">
+      <div class="container">
+
+        <ul class="facts">
+          <li class="fact">
+            <span class="fact-label">Apply for</span>
+            <span class="fact-value">Up to 2 positions</span>
+          </li>
+          <li class="fact">
+            <span class="fact-label">Forms close</span>
+            <span class="fact-value">Week 7</span>
+          </li>
+          <li class="fact">
+            <span class="fact-label">Interviews</span>
+            <span class="fact-value">Weeks 8 and 9</span>
+          </li>
+          <li class="fact">
+            <span class="fact-label">Results announced</span>
+            <span class="fact-value">Week 10</span>
+          </li>
+        </ul>
+
+        <p class="apply-note">You can apply for a maximum of two positions. If you apply for two, fill in a separate form for each one.</p>
+
+
+        <!-- ================================================================
+             THE POSITIONS
+             Each position is one "role-card" block. TO ADD A POSITION: copy
+             a whole block (from its opening article tag to its closing one),
+             paste it below the last one, and change the title, description
+             and form link. Give its data-goatcounter-click its own name so
+             GoatCounter counts its clicks separately.
+             TO CLOSE APPLICATIONS: delete the cards, or this whole page.
+             ================================================================ -->
+        <h2 class="about-subtitle about-subtitle-spaced">The positions</h2>
+
+        <div class="role-grid">
+
+          <!-- EVENT COORDINATOR -->
+          <article class="role-card">
+            <h3 class="role-title">Event Coordinator</h3>
+            <p class="role-description">Plan and run our events from start to finish: booking rooms, organising logistics and making sure every session runs smoothly.</p>
+            <a class="button button-solid role-button" data-goatcounter-click="apply-event-coordinator" data-goatcounter-title="Application form: Event Coordinator" href="https://forms.cloud.microsoft/e/B6qrpKNk59" target="_blank" rel="noopener">Apply <span aria-hidden="true">&nearr;</span></a>
+          </article>
+
+          <!-- SOCIAL MEDIA -->
+          <article class="role-card">
+            <h3 class="role-title">Social Media</h3>
+            <p class="role-description">Run our Instagram and other channels: create posts, promote events and grow the society's audience across campus.</p>
+            <a class="button button-solid role-button" data-goatcounter-click="apply-social-media" data-goatcounter-title="Application form: Social Media" href="https://forms.cloud.microsoft/e/BAjdCDXBkZ" target="_blank" rel="noopener">Apply <span aria-hidden="true">&nearr;</span></a>
+          </article>
+
+          <!-- RESEARCH ANALYST -->
+          <article class="role-card">
+            <h3 class="role-title">Research Analyst</h3>
+            <p class="role-description">Dig into alternative asset markets and turn what you find into clear, engaging content and session material for members.</p>
+            <a class="button button-solid role-button" data-goatcounter-click="apply-research-analyst" data-goatcounter-title="Application form: Research Analyst" href="https://forms.cloud.microsoft/e/tGkcgvhjBS" target="_blank" rel="noopener">Apply <span aria-hidden="true">&nearr;</span></a>
+          </article>
+
+          <!-- SPEAKER SERIES LEAD -->
+          <article class="role-card">
+            <h3 class="role-title">Speaker Series Lead</h3>
+            <p class="role-description">Find and approach speakers from across alternative investments, and build the relationships that bring them to Warwick.</p>
+            <a class="button button-solid role-button" data-goatcounter-click="apply-speaker-series-lead" data-goatcounter-title="Application form: Speaker Series Lead" href="https://forms.cloud.microsoft/e/8CL9YnPg9f" target="_blank" rel="noopener">Apply <span aria-hidden="true">&nearr;</span></a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; 2026 Warwick Alternative Investment Society<br><span class="footer-note">This site uses anonymous, cookie-free analytics (GoatCounter).</span></p>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="#top">Back to top &uarr;</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
