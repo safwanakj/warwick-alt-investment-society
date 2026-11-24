@@ -630,11 +630,18 @@ h1, h2, h3 {
   color: var(--green-dark);
 }
 
+.status-pill + .facts {
+  margin-top: 1.5rem;
+}
+
 .apply-note {
   max-width: 46rem;
   margin: 1.5rem 0 0;
   font-weight: 600;
   color: var(--text);
+}
+.apply-note + .apply-note {
+  margin-top: 0.75rem;
 }
 
 /* The position cards: one column on phones, two on wider screens. */
